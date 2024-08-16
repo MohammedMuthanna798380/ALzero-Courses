@@ -1,0 +1,1031 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59CB433C-5961-4ED6-A7CE-A34A9BA4B898}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ALzero</RootNamespace>
+    <AssemblyName>ALzero</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>D:\File Project\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Guna.Charts.WinForms, Version=1.0.4.0, Culture=neutral, PublicKeyToken=70866663edbc6595, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.Charts.WinForms.1.0.4\lib\net40\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.2\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BL\ADD.cs" />
+    <Compile Include="BL\COURSES.cs" />
+    <Compile Include="BL\DETAILS.cs" />
+    <Compile Include="BL\DISPLAY.cs" />
+    <Compile Include="BL\ISADMIN.cs" />
+    <Compile Include="BL\LIBRARY.cs" />
+    <Compile Include="BL\LOGIN.cs" />
+    <Compile Include="BL\LOGOUT.cs" />
+    <Compile Include="BL\MESSAGE.cs" />
+    <Compile Include="BL\REPORT.cs" />
+    <Compile Include="BL\SEARCCH.cs" />
+    <Compile Include="BL\SETTING.cs" />
+    <Compile Include="BL\START.cs" />
+    <Compile Include="BL\USERS.cs" />
+    <Compile Include="DAL\DAL.cs" />
+    <Compile Include="PL\FRM_BOOKS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_BOOKS.Designer.cs">
+      <DependentUpon>FRM_BOOKS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_REPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_REPORT.Designer.cs">
+      <DependentUpon>FRM_REPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_SETTING.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_SETTING.Designer.cs">
+      <DependentUpon>FRM_SETTING.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Add.Designer.cs">
+      <DependentUpon>FRM_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_COURSES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_COURSES.Designer.cs">
+      <DependentUpon>FRM_COURSES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_DETAILS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_DETAILS.Designer.cs">
+      <DependentUpon>FRM_DETAILS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_DISPLAY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_DISPLAY.Designer.cs">
+      <DependentUpon>FRM_DISPLAY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_LOGIN.Designer.cs">
+      <DependentUpon>FRM_LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_MAIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_MAIN.Designer.cs">
+      <DependentUpon>FRM_MAIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_SEARCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_SEARCH.Designer.cs">
+      <DependentUpon>FRM_SEARCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Start.Designer.cs">
+      <DependentUpon>FRM_Start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_MESSAGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_MESSAGE.Designer.cs">
+      <DependentUpon>FRM_MESSAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Users.Designer.cs">
+      <DependentUpon>FRM_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPOT\CertificateRPOT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CertificateRPOT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPOT\FRM_REPORTER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPOT\FRM_REPORTER.Designer.cs">
+      <DependentUpon>FRM_REPORTER.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="PL\FRM_BOOKS.resx">
+      <DependentUpon>FRM_BOOKS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_REPORT.resx">
+      <DependentUpon>FRM_REPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_SETTING.resx">
+      <DependentUpon>FRM_SETTING.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Add.resx">
+      <DependentUpon>FRM_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_COURSES.resx">
+      <DependentUpon>FRM_COURSES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_DETAILS.resx">
+      <DependentUpon>FRM_DETAILS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_DISPLAY.resx">
+      <DependentUpon>FRM_DISPLAY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_LOGIN.resx">
+      <DependentUpon>FRM_LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_MAIN.resx">
+      <DependentUpon>FRM_MAIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_SEARCH.resx">
+      <DependentUpon>FRM_SEARCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Start.resx">
+      <DependentUpon>FRM_Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_MESSAGE.resx">
+      <DependentUpon>FRM_MESSAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Users.resx">
+      <DependentUpon>FRM_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RPOT\CertificateRPOT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CertificateRPOT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPOT\FRM_REPORTER.resx">
+      <DependentUpon>FRM_REPORTER.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Courses\C# واجهات .pdf" />
+    <None Include="Courses\C#.NET 1.pdf" />
+    <None Include="Courses\Carlos Coronel, Steven Morris - Database Systems_ Design, Implementation, &amp; Management-Cengage Learning %282016%29.pdf" />
+    <None Include="Courses\Java Thread.pdf" />
+    <None Include="Courses\JavaRMI4.pdf" />
+    <None Include="Courses\Modern database ManageMent.pdf" />
+    <None Include="Courses\sql\HOSPITAL.vsdx" />
+    <None Include="Courses\Website .pdf" />
+    <None Include="Courses\برمجة قواعد بيانات.pdf" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\felid_course.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\236831.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrow_book_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categorize_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\collapse_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_sign_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_filled_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_window_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_window_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sell_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_filled_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\m.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_vedio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_vedios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vedio_bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vedio_c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vedios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtub.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clockicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homebackicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeicon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeicon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_vedio2icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_vedioicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vediobaricon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vediosviowicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vedioyoutubicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\videoicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtubicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_white2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_white3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vedio_c40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vedio_you40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vediobar40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtub40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_vedio40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_vedioicon40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_vedios40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\register40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\register60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\register50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock2440px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock2450px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_vedio50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vedio_c50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_icon50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\register50pxblack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_icon50pxblack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_black50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_black55px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_black60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeicon_black50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\felid_felm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vedio-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vidio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Courses\C# واجهات\100.mp4" />
+    <Content Include="Courses\C# واجهات\101.mp4" />
+    <Content Include="Courses\C# واجهات\102.mp4" />
+    <Content Include="Courses\C# واجهات\103.mp4" />
+    <Content Include="Courses\C# واجهات\104.mp4" />
+    <Content Include="Courses\C# واجهات\105.mp4" />
+    <Content Include="Courses\C# واجهات\106.mp4" />
+    <Content Include="Courses\C# واجهات\107.mp4" />
+    <Content Include="Courses\C# واجهات\108.mp4" />
+    <Content Include="Courses\C# واجهات\109.mp4" />
+    <Content Include="Courses\C# واجهات\110.mp4" />
+    <Content Include="Courses\C# واجهات\38.mp4" />
+    <Content Include="Courses\C# واجهات\39.mp4" />
+    <Content Include="Courses\C# واجهات\40.mp4" />
+    <Content Include="Courses\C# واجهات\41.mp4" />
+    <Content Include="Courses\C# واجهات\42.mp4" />
+    <Content Include="Courses\C# واجهات\43.mp4" />
+    <Content Include="Courses\C# واجهات\44.mp4" />
+    <Content Include="Courses\C# واجهات\45.mp4" />
+    <Content Include="Courses\C# واجهات\46.mp4" />
+    <Content Include="Courses\C# واجهات\47.mp4" />
+    <Content Include="Courses\C# واجهات\48.mp4" />
+    <Content Include="Courses\C# واجهات\49.mp4" />
+    <Content Include="Courses\C# واجهات\50.mp4" />
+    <Content Include="Courses\C# واجهات\51.mp4" />
+    <Content Include="Courses\C# واجهات\52.mp4" />
+    <Content Include="Courses\C# واجهات\53.mp4" />
+    <Content Include="Courses\C# واجهات\54.mp4" />
+    <Content Include="Courses\C# واجهات\55.mp4" />
+    <Content Include="Courses\C# واجهات\56.mp4" />
+    <Content Include="Courses\C# واجهات\57.mp4" />
+    <Content Include="Courses\C# واجهات\58.mp4" />
+    <Content Include="Courses\C# واجهات\59.mp4" />
+    <Content Include="Courses\C# واجهات\60.mp4" />
+    <Content Include="Courses\C# واجهات\61.mp4" />
+    <Content Include="Courses\C# واجهات\62.mp4" />
+    <Content Include="Courses\C# واجهات\63.mp4" />
+    <Content Include="Courses\C# واجهات\64.mp4" />
+    <Content Include="Courses\C# واجهات\65.mp4" />
+    <Content Include="Courses\C# واجهات\66.mp4" />
+    <Content Include="Courses\C# واجهات\67.mp4" />
+    <Content Include="Courses\C# واجهات\68.mp4" />
+    <Content Include="Courses\C# واجهات\69.mp4" />
+    <Content Include="Courses\C# واجهات\70.mp4" />
+    <Content Include="Courses\C# واجهات\71.mp4" />
+    <Content Include="Courses\C# واجهات\72.mp4" />
+    <Content Include="Courses\C# واجهات\73.mp4" />
+    <Content Include="Courses\C# واجهات\74.mp4" />
+    <Content Include="Courses\C# واجهات\75.mp4" />
+    <Content Include="Courses\C# واجهات\76.mp4" />
+    <Content Include="Courses\C# واجهات\77.mp4" />
+    <Content Include="Courses\C# واجهات\78.mp4" />
+    <Content Include="Courses\C# واجهات\79.mp4" />
+    <Content Include="Courses\C# واجهات\80.mp4" />
+    <Content Include="Courses\C# واجهات\81.mp4" />
+    <Content Include="Courses\C# واجهات\82.mp4" />
+    <Content Include="Courses\C# واجهات\83.mp4" />
+    <Content Include="Courses\C# واجهات\84.mp4" />
+    <Content Include="Courses\C# واجهات\85.mp4" />
+    <Content Include="Courses\C# واجهات\86.mp4" />
+    <Content Include="Courses\C# واجهات\87.mp4" />
+    <Content Include="Courses\C# واجهات\88.mp4" />
+    <Content Include="Courses\C# واجهات\89.mp4" />
+    <Content Include="Courses\C# واجهات\90.mp4" />
+    <Content Include="Courses\C# واجهات\91.mp4" />
+    <Content Include="Courses\C# واجهات\92.mp4" />
+    <Content Include="Courses\C# واجهات\93.mp4" />
+    <Content Include="Courses\C# واجهات\94.mp4" />
+    <Content Include="Courses\C# واجهات\95.mp4" />
+    <Content Include="Courses\C# واجهات\96.mp4" />
+    <Content Include="Courses\C# واجهات\97.mp4" />
+    <Content Include="Courses\C# واجهات\98.mp4" />
+    <Content Include="Courses\C# واجهات\99.mp4" />
+    <Content Include="Courses\Css 2021\01.Learn CSS In Arabic 2021 - #01 - Introduction And What I Need To Learn.mp4" />
+    <Content Include="Courses\Css 2021\02.Learn CSS In Arabic 2021 - #02 - Your First Project And Syntax.mp4" />
+    <Content Include="Courses\Css 2021\03.Learn CSS In Arabic 2021 - #03 - Element Styling.mp4" />
+    <Content Include="Courses\Css 2021\04.Learn CSS In Arabic 2021 - #04 - Name Conventions And Rules.mp4" />
+    <Content Include="Courses\Css 2021\05.Learn CSS In Arabic 2021 - #05 - Background - Color, Image, Repeat.mp4" />
+    <Content Include="Courses\Css 2021\06.Learn CSS In Arabic 2021 - #06 - Background - Attachment, Position, Size.mp4" />
+    <Content Include="Courses\Css 2021\07.Learn CSS In Arabic 2021 - #07 - Padding.mp4" />
+    <Content Include="Courses\Css 2021\08.Learn CSS In Arabic 2021 - #08 - Margin.mp4" />
+    <Content Include="Courses\Css 2021\09.Learn CSS In Arabic 2021 - #09 - Border.mp4" />
+    <Content Include="Courses\Css 2021\10.Learn CSS In Arabic 2021 - #10 - Outline.mp4" />
+    <Content Include="Courses\Css 2021\11.Learn CSS In Arabic 2021 - #11 - Display - Block, Inline Block, Inline.mp4" />
+    <Content Include="Courses\Css 2021\12.Learn CSS In Arabic 2021 - #12 - Element Visibility And Use Cases.mp4" />
+    <Content Include="Courses\Css 2021\13.Learn CSS In Arabic 2021 - #13 - Grouping Multiple Selectors.mp4" />
+    <Content Include="Courses\Css 2021\14.Learn CSS In Arabic 2021 - #14 - Nesting.mp4" />
+    <Content Include="Courses\Css 2021\15.Learn CSS In Arabic 2021 - #15 - Dimensions - Width And Height.mp4" />
+    <Content Include="Courses\Css 2021\16.Learn CSS In Arabic 2021 - #16 - Overflow - Overflow-X And Overflow-Y.mp4" />
+    <Content Include="Courses\Css 2021\17.Learn CSS In Arabic 2021 - #17 - Text - Color And Shadow.mp4" />
+    <Content Include="Courses\Css 2021\18.Learn CSS In Arabic 2021 - #18 - Text - Alignment.mp4" />
+    <Content Include="Courses\Css 2021\19.Learn CSS In Arabic 2021 - #19 - Text - Decoration And Transform.mp4" />
+    <Content Include="Courses\Css 2021\20.Learn CSS In Arabic 2021 - #20 - Text - Spacing.mp4" />
+    <Content Include="Courses\Css 2021\21.Learn CSS In Arabic 2021 - #21 - Text - Overflow And Use Cases.mp4" />
+    <Content Include="Courses\Css 2021\22.Learn CSS In Arabic 2021 - #22 - Inheritance.mp4" />
+    <Content Include="Courses\Css 2021\23.Learn CSS In Arabic 2021 - #23 - Typography - Font Family.mp4" />
+    <Content Include="Courses\Css 2021\24.Learn CSS In Arabic 2021 - #24 - Typography - Font Size And CSS Units.mp4" />
+    <Content Include="Courses\Css 2021\25.Learn CSS In Arabic 2021 - #25 - Typography - Font Style And Variant And Weight.mp4" />
+    <Content Include="Courses\Css 2021\26.Learn CSS In Arabic 2021 - #26 - Mouse Cursor.mp4" />
+    <Content Include="Courses\Css 2021\27.Learn CSS In Arabic 2021 - #27 - Float And Clear.mp4" />
+    <Content Include="Courses\Css 2021\28.Learn CSS In Arabic 2021 - #28 - Mastering The CSS Calculation.mp4" />
+    <Content Include="Courses\Css 2021\29.Learn CSS In Arabic 2021 - #29 - Opacity.mp4" />
+    <Content Include="Courses\Css 2021\30.Learn CSS In Arabic 2021 - #30 - Position.mp4" />
+    <Content Include="Courses\Css 2021\31.Learn CSS In Arabic 2021 - #31 - Z-Index.mp4" />
+    <Content Include="Courses\Css 2021\32.Learn CSS In Arabic 2021 - #32 - Lists Styling.mp4" />
+    <Content Include="Courses\Css 2021\33.Learn CSS In Arabic 2021 - #33 - Table Styling.mp4" />
+    <Content Include="Courses\Css 2021\34.Learn CSS In Arabic 2021 - #34 - Pseudo Classes.mp4" />
+    <Content Include="Courses\Css 2021\35.Learn CSS In Arabic 2021 - #35 - Pseudo Elements - First Letter, First Line, Selection.mp4" />
+    <Content Include="Courses\Css 2021\36.Learn CSS In Arabic 2021 - #36 - Pseudo Elements - Before, After, Content.mp4" />
+    <Content Include="Courses\Css 2021\37.Learn CSS In Arabic 2021 - #37 - Pseudo Elements - Content And Trainings_2.mp4" />
+    <Content Include="Courses\Css 2021\38.Learn CSS In Arabic 2021 - #38 - Vendor Prefixes.mp4" />
+    <Content Include="Courses\Css 2021\39.Learn CSS In Arabic 2021 - #39 - Border Radius.mp4" />
+    <Content Include="Courses\Css 2021\40.Learn CSS In Arabic 2021 - #40 - Box Shadow And Examples.mp4" />
+    <Content Include="Courses\Css 2021\41.Learn CSS In Arabic 2021 - #41 - The Box Model And Box Sizing.mp4" />
+    <Content Include="Courses\Css 2021\42.Learn CSS In Arabic 2021 - #42 - Transition.mp4" />
+    <Content Include="Courses\Css 2021\43.Learn CSS In Arabic 2021 - #43 - !Important Declaration And Use Cases.mp4" />
+    <Content Include="Courses\Css 2021\44.Learn CSS In Arabic 2021 - #44 - The Margin Collapse.mp4" />
+    <Content Include="Courses\Css 2021\45.Learn CSS In Arabic 2021 - #45 - CSS Variables And Trainings.mp4" />
+    <Content Include="Courses\Css 2021\46.Learn CSS In Arabic 2021 - #46 - Flex Box Parent - Direction, Wrap, Flow.mp4" />
+    <Content Include="Courses\Css 2021\47.Learn CSS In Arabic 2021 - #47 - Flex Box Parent - Justify Content.mp4" />
+    <Content Include="Courses\Css 2021\48.Learn CSS In Arabic 2021 - #48 - Flex Box Parent - Align Items.mp4" />
+    <Content Include="Courses\Css 2021\49.Learn CSS In Arabic 2021 - #49 - Flex Box Parent - Align Content.mp4" />
+    <Content Include="Courses\Css 2021\50.Learn CSS In Arabic 2021 - #50 - Flex Box Child - Grow, Shrink, Order.mp4" />
+    <Content Include="Courses\Css 2021\51.Learn CSS In Arabic 2021 - #51 - Flex Box Child - Flex Basis, Flex Shorthand.mp4" />
+    <Content Include="Courses\Css 2021\52.Learn CSS In Arabic 2021 - #52 - Flex Box Child - Align Self, Games, Task.mp4" />
+    <Content Include="Courses\Css 2021\53.Learn CSS In Arabic 2021 - #53 - Finish Flex Froggy Game.mp4" />
+    <Content Include="Courses\Css 2021\54.Learn CSS In Arabic 2021 - #54 - Filters.mp4" />
+    <Content Include="Courses\Css 2021\55.Learn CSS In Arabic 2021 - #55 - Gradients.mp4" />
+    <Content Include="Courses\Css 2021\56.Learn CSS In Arabic 2021 - #56 - Pointer Events And Caret Color.mp4" />
+    <Content Include="Courses\Css 2021\57.Learn CSS In Arabic 2021 - #57 - Grid - Parent - Template Columns.mp4" />
+    <Content Include="Courses\Css 2021\58.Learn CSS In Arabic 2021 - #58 - Grid - Parent - Template Rows And Gap.mp4" />
+    <Content Include="Courses\Css 2021\59.Learn CSS In Arabic 2021 - #59 - Grid - Parent - Justify Content And Align Content.mp4" />
+    <Content Include="Courses\Css 2021\60.Learn CSS In Arabic 2021 - #60 - Grid - Parent - Complete Layout With Template Areas.mp4" />
+    <Content Include="Courses\Css 2021\61.Learn CSS In Arabic 2021 - #61 - Grid - Child - Grid Column And Grid Row.mp4" />
+    <Content Include="Courses\Css 2021\62.Learn CSS In Arabic 2021 - #62 - Grid - Child - Grid Area And Trainings.mp4" />
+    <Content Include="Courses\Css 2021\63.Learn CSS In Arabic 2021 - #63 - Grid - Min, Max And Auto Fill.mp4" />
+    <Content Include="Courses\Css 2021\64.Learn CSS In Arabic 2021 - #64 - Finish The Grid Garden Game.mp4" />
+    <Content Include="Courses\Css 2021\65.Learn CSS In Arabic 2021 - #65 - 2D Transform - Scale.mp4" />
+    <Content Include="Courses\Css 2021\66.Learn CSS In Arabic 2021 - #66 - 2D Transform - Rotate_2.mp4" />
+    <Content Include="Courses\Css 2021\67.Learn CSS In Arabic 2021 - #67 - 2D Transform - Translate.mp4" />
+    <Content Include="Courses\Css 2021\68.Learn CSS In Arabic 2021 - #68 - 2D Transform - Skew.mp4" />
+    <Content Include="Courses\Css 2021\69.Learn CSS In Arabic 2021 - #69 - 2D Transform - Matrix.mp4" />
+    <Content Include="Courses\Css 2021\70.Learn CSS In Arabic 2021 - #70 - Transform - Origin.mp4" />
+    <Content Include="Courses\Css 2021\71.Learn CSS In Arabic 2021 - #71 - 3D Transform - Rotate.mp4" />
+    <Content Include="Courses\Css 2021\72.Learn CSS In Arabic 2021 - #72 - 3D Transform - Translate, Perspective, Perspective Origin.mp4" />
+    <Content Include="Courses\Css 2021\73.Learn CSS In Arabic 2021 - #73 - 3D Transform - Backface Visibility And Flip Product.mp4" />
+    <Content Include="Courses\Css 2021\74.Learn CSS In Arabic 2021 - #74 - Animation - KeyFrames, Name, Duration.mp4" />
+    <Content Include="Courses\Css 2021\75.Learn CSS In Arabic 2021 - #75 - Animation - Iteration Count, Timing Function, Spinner Loading.mp4" />
+    <Content Include="Courses\Css 2021\76.Learn CSS In Arabic 2021 - #76 - Animation - Direction, Fill Mode, Play State, Delay.mp4" />
+    <Content Include="Courses\Css 2021\77.Learn CSS In Arabic 2021 - #77 - Up And Down Loading Animation Training.mp4" />
+    <Content Include="Courses\Css 2021\78.Learn CSS In Arabic 2021 - #78 - CSS Selectors Reference Part 1.mp4" />
+    <Content Include="Courses\Css 2021\79.Learn CSS In Arabic 2021 - #79 - CSS Selectors Reference Part 2.mp4" />
+    <Content Include="Courses\Css 2021\80.Learn CSS In Arabic 2021 - #80 - CSS Selectors Reference Part 3.mp4" />
+    <Content Include="Courses\Css 2021\81.Learn CSS In Arabic 2021 - #81 - CSS Selectors Reference Part 4.mp4" />
+    <Content Include="Courses\Css 2021\82.Learn CSS In Arabic 2021 - #82 - CSS Selectors Reference Part 5.mp4" />
+    <Content Include="Courses\Css 2021\83.Learn CSS In Arabic 2021 - #83 - Media Queries And Responsive Designs Intro.mp4" />
+    <Content Include="Courses\Css 2021\84.Learn CSS In Arabic 2021 - #84 - Media Queries And Responsive Designs Standards.mp4" />
+    <Content Include="Courses\Css 2021\85.Learn CSS In Arabic 2021 - #85 - Media Queries And Responsive Designs Practice.mp4" />
+    <Content Include="Courses\Css 2021\86.Learn CSS In Arabic 2021 - #86 - Create Your Framework.mp4" />
+    <Content Include="Courses\Css 2021\87.Learn CSS In Arabic 2021 - #87 - CSS Global Values.mp4" />
+    <Content Include="Courses\Css 2021\88.Learn CSS In Arabic 2021 - #88 - The End And How To Master HTML And CSS.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _01 - Introduction and What I Need To Learn%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _02 - Elements And Browser%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _03 - First Project And First Page%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _04 - Head And Nested Elements%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _05 - Comments And Use Cases%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _06 - Doctype And Standard And Quirks Mode%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _07 - Headings And Use Cases%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _08 - Syntax And Tests%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _09 - Paragraph Element%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _10 - Elements Attributes%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _11 - Formatting Elements%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _12 - Links - Anchor Tag%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _13 - Image And Deal With Paths%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _14 - Lists - UL_ OL_ DL%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _15 - Table%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _16 - Span And Break And Horizontal Rule%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _17 - Div And How To Use%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _18 - HTML Entities%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _19 - Semantic Elements%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _20 - Layout With Div And Classes%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _21 - Layout With Semantic Elements%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _22 - Audio%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _23 - Video%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _24 - Form Part 1 - Input Types And Label%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _25 - Form Part 2 - Required_ Placeholder_ Value%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _26 - Form Part 3 - Action_ Name_ Method%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _27 - Form Part 4 - Hidden_ Reset_ Color_ Range_ Number%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _28 - Form Part 5 - ReadOnly_ Disabled_ Autofocus%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _29 - Form Part 6 - Radio And Checkbox%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _30 - Form Part 7 - Select And Textarea%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _31 - Form Part 8 - File_ Search_ URL_ Time%28480P%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _32 - Form Part 9 - Data List_ Novalidate_ Target%281080P_HD%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _33 - Q_ BlockQuote_ Wbr_ Bdi_ Button%28480P%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _34 - iFrame_ Pre_ Code%28480P%29.mp4" />
+    <Content Include="Courses\HTML 2021\Learn HTML In Arabic 2021 - _35 - Accessibility Intro%28480P%29.mp4" />
+    <Content Include="Courses\java2\_030 [JAVA] - Introduction to Object-Oriented Programming%281080P_HD%29.mp4" />
+    <Content Include="Courses\java2\_031 [JAVA] - Classes and Objects%281080P_HD%29.mp4" />
+    <Content Include="Courses\java2\_032 [JAVA] - Questions and Exercises - Classes and Objects%281080P_HD%29.mp4" />
+    <Content Include="Courses\java2\_033 [JAVA] - Constructor %28No-Arg_ Parameterized_ Default%29%281080P_HD%29.mp4" />
+    <Content Include="Courses\java2\_034 [JAVA] - Constructor %28Copy Constructor%29 _ Finalizers vs Destructor%281080P_HD%29.mp4" />
+    <Content Include="Courses\java2\_035 [JAVA] - Static keyword %28Static Variable and Methods%29%281080P_HD%29%28720P_HD%29.mp4" />
+    <Content Include="Courses\java2\_036 [JAVA] - Static keyword %28Static Block - Static Class%29%28720P_HD%29.mp4" />
+    <Content Include="Courses\java2\_037 [JAVA] - Passing Objects to Methods %28by Value vs by Reference _ Passing Objects as Arguments%29%281080P_HD%29%28720P_60FPS%29.mp4" />
+    <Content Include="Courses\java2\_038 [JAVA] - Passing Objects to Methods %28Returning Objects _ Comparing Objects%29%281080P_HD%29%28720P_60FPS%29.mp4" />
+    <Content Include="Courses\java2\_039 [JAVA] - Inheritance %28Types of Inheritance _ Access Modifiers and inheritance%29%28720P_HD%29.mp4" />
+    <Content Include="Courses\java2\_040 [JAVA] - Inheritance %28Super Keyword _ Object Class _ Package-Private vs Protected%29%281080P_HD%29%28720P_60FPS%29.mp4" />
+    <Content Include="Courses\java2\_041 [JAVA] - Polymorphism %28Method Overloading and Method Overriding%29%281080P_HD%29%28720P_60FPS%29.mp4" />
+    <Content Include="Courses\java2\_042 [JAVA] - Polymorphism%28Explanation of Examples_ Static Methods%29%281080P_HD%29%28720P_60FPS%29.mp4" />
+    <Content Include="Courses\java2\_043 [JAVA] - Polymorphism%28Late binding _Dynamic Polymorphism__ Early binding _Static Polymorphism_%29%281080P_HD%29%28720P_60FPS%29.mp4" />
+    <Content Include="Courses\java2\_044 [JAVA] - Types of Relationships %28Association_ Aggregation _has-a__ Composition _part-of_%29%281080P_HD%29%28720P_60FPS%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#003_-_Setting_Up_Environment_And_Tools%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#004_-_Work_With_Chrome_Developer_Tools%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#005_-_Where_To_Put_The_Code%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#006_-_Comments_And_Bad_Practices%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#007_-_Output_To_Screen%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#008_-_Console_Methods_And_Styling_And_WebAPI%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#010_-_Data_Types_And_Typeof_Operator%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#011_-_Variables_Introduction%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#012_-_Identifiers_Name_Conventions_And_Rules%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#013_-_Var,_Let,_Const_Compare%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#014_-_String_Syntax_And_Character_Escape_Sequences%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#015_-_Concatenation%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#016_-_Template_Literals_Template_Strings%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#017_-_Variable_And_Concatenation_Challenge%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#018_-_Arithmetic_Operators%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#019_-_Unary_Plus_And_Negation_Operators%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#020_-_Type_Coercion%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#021_-_Assignment_Operators%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#022_-_Operators_Challenges%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#023_-_Number%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#024_-_Number_Methods%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#025_-_Math_Object%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#026_-_Number_Challenge%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#027_-_String_Methods_Part_1%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#028_-_String_Methods_Part_2%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#029_-_String_Methods_Part_3%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#030_-_String_Challenge%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#031_-_Comparison_Operators%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#032_-_Logical_Operators%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#033_-_If_Conditions%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#034_-_Nested_If_Condition%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#035_-_Conditional_Ternary_Operator%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#036_-_Nullish_Coalescing_Operator_And_Logical_Or%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#037_-_If_Condition_Challenge%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#038_-_Switch_Statement%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#039_-_Switch_And_If_Condition_Challenge%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#040_-_Array_Big_Introduction%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#041_-_Using_Length_With_Array%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#042_-_Add_And_Remove_From_Array%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#043_-_Searching_Array%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#044_-_Sorting_Arrays%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#045_-_Slicing_Array%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#046_-_Joining_Arrays%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#047_-_Array_Challenge%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#048_-_Loop_-_For_And_Concept_Of_Loop%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#049_-_Looping_On_Sequences%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#050_-_Nested_Loops_And_Trainings%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#051_-_Loop_Control_-_Break,_Continue,_Label%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#052_-_Loop_-_For_Advanced_Example%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#053_-_Practice_-_Add_Products_To_Page%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#054_-_Loop_-_While%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#055_-_Loop_-_Do_While%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#056_-_Loop_-_Challenge%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#057_-_Function_Intro_And_Basic_Usage%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#058_-_Function_Advanced_Examples%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#059_-_Function_Return_And_Use_Cases%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#060_-_Function_Default_Parameters%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#061_-_Function_Rest_Parameters%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#062_-_Function_Ultimate_Practice%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#063_-_Random_Arguments_Function_Challenge%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#064_-_Anonymous_Function_And_Practice%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#065_-_Return_Nested_Function%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#066_-_Arrow_Function_Syntax%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#067_-_Scope_-_Global_And_Local%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#068_-_Scope_-_Block%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#069_-_Scope_-_Lexical_%28Static%29%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#070_-_Arrow_Function_Challenge%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#071_-_Higher_Order_Functions_-_Map%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#072_-_Higher_Order_Functions_-_Map_Practice%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#073_-_Higher_Order_Functions_-_Filter%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#074_-_Higher_Order_Functions_-_Filter_Practice%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#075_-_Higher_Order_Functions_-_Reduce%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#076_-_Higher_Order_Functions_-_Reduce_Practice%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#077_-_Higher_Order_Functions_-_ForEach_And_Practice%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#078_-_Higher_Order_Functions_-_Challenge%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#079_-_Object_-_Introduction%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#080_-_Dot_Notation_vs_Bracket_Notation%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#081_-_Nested_Object_And_Advanced_Trainings%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#082_-_Create_Object_With_New_Keyword%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#083_-_This_Keyword%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#084_-_Create_Object_With_Create_Method%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#085_-_Create_Object_With_Assign_Method%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#086_-_What_Is_DOM_And_Select_Elements%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#087_-_Get_Set_Elements_Content_And_Attributes%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#088_-_Check_Attributes_And_Examples%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#089_-_Create_And_Append_Elements%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#090_-_Product_With_Title_And_Description_Practice%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#091_-_Deal_With_Children%27s%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#092_-_DOM_Events%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#093_-_Validate_Form_And_Prevent_Default%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#094_-_Event_Simulation_-_Click_Focus_Blur%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#095_-_Class_List_Object_And_Methods%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#096_-_CSS_Styling_And_Stylesheets%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#097_-_Before,_After,_Prepend,_Append,_Remove%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#098_-_DOM_Traversing%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#099_-_DOM_Cloning%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#100_-_AddEventListener%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#101_-_DOM_Challenge%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#103_-_Alert,_Confirm,_Prompt%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#104_-_setTimeout_and_clearTimeout%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#105_-_setInterval_and_clearInterval%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#106_-_Window_Location_Object%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#107_-_Window_Open_And_Close%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#108_-_Window_History_Object%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#109_-_Scroll,_ScrollTo,_ScrollBy,_Focus,_Print,_Stop%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#110_-_Scroll_To_Top_Using_Y_Practice%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#111_-_Local_Storage%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#112_-_Local_Storage_Color_Application_Practice%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#113_-_Session_Storage_And_Use_Cases%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_#114_-_BOM_Challenge%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_%2523001_-_Introduction_And_What_Is_JavaScript__%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_%2523002_-_How_To_Study_The_Course__%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_%2523009_-_What_Is_ECMAScript__%281080p%29.mp4" />
+    <Content Include="Courses\JavaScript 2021\Learn_JavaScript_In_Arabic_2021_-_%2523102_-_What_Is_BOM_%281080p%29.mp4" />
+    <Content Include="Courses\java\_00 [JAVA] - Introduction%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_01 [JAVA] - Installing the Java Development Tools %28JDK_  Apache NetBeans IDE%29%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_010 [JAVA] - Repetition Control Statement %28While Loop%29%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_011 [JAVA] - Sentinel and Flag-Controlled While Loops%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_012 [JAVA] - Repetition Control Statement %28Do-While Loop%29%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_013 [JAVA] - Repetition Control Statement %28For Loop%29%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_014 [JAVA] - Questions and Exercises in Loops%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_015 [JAVA] - Branching Statements %28 Break_Continue %29%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_016 [JAVA] - Repetition Control Statement %28Nested Loops%29%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_017 [JAVA] - Branching Statements %28Labeled Break _ Labeled Continue%29%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_018 [JAVA] - Method _ Function Part 1%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_019 [JAVA] - Method _ Function Part 2 %28Examples%29%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_02 [JAVA] - Escape Sequences and Comments%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_020 [JAVA] - Built in Method _ Function%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_021 [JAVA] - Overloading Method _ Function%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_022 [JAVA] -  Recursion_Recursive Methods Part 1%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_023 [JAVA] -  Recursion_Recursive Methods Part 2%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_024 [JAVA] -  One Dimensional Arrays %281D Array%29%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_025 [JAVA] -  One Dimensional Array %28Exercises_ Practice%29%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_026 [JAVA] -  One Dimensional Array %28Char Array%29%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_027 [JAVA] -  Passing Arrays to Methods%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_028 [JAVA] -  Multidimensional Arrays _ Passing Multidimensional Arrays to Methods%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_029 [JAVA] - String _ Array String%281080P_HD%29%28720P_HD%29.mp4" />
+    <Content Include="Courses\java\_03 [JAVA] - Data Types%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_04 [JAVA] - Arithmetic Operators%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_05 [JAVA] - Arithmetic Operators %28Prefix _ Postfix%29%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_06 [JAVA] - Java User Input %28Scanner%29_ Printf methods%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_07 [JAVA] - Selection Statement %28 if - if else - if else if %29%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_08 [JAVA] - Selection Statement %28 Exercises_ Practice_ Ternary Operator %29_ Instanceof Method%281080P_HD%29.mp4" />
+    <Content Include="Courses\java\_09 [JAVA] - Selection Statement %28Switch Statements%29%281080P_HD%29.mp4" />
+    <Content Include="Courses\sql\0-_Preparation,_Install_Oracle_-_تثبيت_الأوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\001_-_Lab_Software___Install_Power_Designer_Version_6%28360p%29.mp4" />
+    <Content Include="Courses\sql\1-_An_Introduction_to_Oracle_SQL._مقدمة_السلسة_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\63_-_Oracle_Subqueries_-_Nested_Queries_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\64-_Oracle_SQL_Views_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\66_-_Oracle_PL_SQL_IF_-_Then_-_Else_%25D8%25AA%25D8%25B9%25D9%2584%25D9%258A%25D9%2585_%25D8%25A3%25D9%2588%25D8%25B1%25D8%25A7%25D9%2583%25D9%2584%28360p%29.mp4" />
+    <Content Include="Courses\sql\67_-_Oracle_PL_SQL_Case_Statement_%25D8%25AA%25D8%25B9%25D9%2584%25D9%258A%25D9%2585_%25D8%25A3%25D9%2588%25D8%25B1%25D8%25A7%25D9%2583%25D9%2584%28360p%29.mp4" />
+    <Content Include="Courses\sql\68_-_Oracle_PL_SQL_Loops_-_Loop_Statement_%25D8%25AA%25D8%25B9%25D9%2584%25D9%258A%25D9%2585_%25D8%25A3%25D9%2588%25D8%25B1%25D8%25A7%25D9%2583%25D9%2584%28360p%29.mp4" />
+    <Content Include="Courses\sql\69-_Oracle_PL_SQL_Loops_-_While_Loop_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\70-_Oracle_PL_SQL_Loops_-_For_Loop_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\71-_Oracle_PL_SQL__For_Loop,_While_Loop,_Loop_End_Loop_Statements_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\72-_Oracle_PL_SQL_-_Cursors_-_Implicit_Cursors_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\73- Oracle PL_SQL - Explicit Cursors -Type - RowType تعليم أوراكل.mp4" />
+    <Content Include="Courses\sql\74-_Oracle_PL_SQL_Cursors_-_Implicit_and_Explicit_Cursors_%25D8%25AA%25D8%25B9%25D9%2584%25D9%258A%25D9%2585_%25D8%25A3%25D9%2588%25D8%25B1%25D8%25A7%25D9%2583%25D9%2584%28360p%29.mp4" />
+    <Content Include="Courses\sql\75-_Oracle_Stored_program_units-_Introduction_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\76-_Oracle_Stored_procedure_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\77-_Oracle_Stored_Functions_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\78-_Oracle_Packages_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\79 - Oracle PL_SQL- Stored Program Units %28Procedure, Function,Package%29 أوراكل.mp4" />
+    <Content Include="Courses\sql\80- Oracle PL_SQL Triggers - %28الجزء النظرى%29.mp4" />
+    <Content Include="Courses\sql\81- Oracle PL_SQL Triggers %28الجزء العملى%29.mp4" />
+    <Content Include="Courses\sql\83 - Oracle PLS_QL Triggers %28نظرى - عملى%29.mp4" />
+    <Content Include="Courses\sql\How To Draw ER Model using Power Designer 16.mp4" />
+    <Content Include="Courses\sql\How To Draw ERD using Power Designer V 6.mp4" />
+    <Content Include="Courses\sql\How_To_Download_and_Install_Oracle_11G_Express_-_English%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_-_Final_Revision_on_All_Basic_SQL_statements.%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Alter_Table_Statment_تعليم_اوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Check_Constraint_تعليم_اوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Constraints_تعليم_اوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Create_Table_,_Drop_Table_تعليم_اوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Drop,_Disable_and_Enable_Constraints_تعليم_اوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Final_Revision_-_Part1_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Final_Revision_-_Part_2_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Final_Revision_-_Part_3_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Final_Revision_-_Part_4_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Final_Revision_-_Part_5_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Foreign_key_Constraint_تعليم_اوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Group_by_-_Having_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Group_by_clause_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Insert_Into_Statement_تعليم_اوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Join_Tables_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Order_By_clause_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Primary_Key_Constraint_1_تعليم_اوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Primary_Key_Constraint_2_تعليم_اوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Select_Like_%27%25__%27_With_Where_Clause_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Select_Statement_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Select_Where_Clause._تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_SQL_The_Delete_Statement_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_SQL_The_Update_Statement_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Unique_Constraint_تعليم_اوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle_Using_In_,_Between_and_Not_تعليم_أوراكل%28360p%29.mp4" />
+    <Content Include="Courses\sql\Oracle__Aggregate_Functions_,_Summary_Functions%28360p%29.mp4" />
+    <Content Include="Courses\sql\تحميل_و_تثبيت_الأوراكل_11g_Express%28360p%29.mp4" />
+    <Content Include="Courses\sql\محاضرة_بث_مباشر_-_مراجعة_الجزء_العملى_لمقرر_قواعد_البيانات%28360p%29.mp4" />
+    <Content Include="Courses\سي شارب\1.mp4" />
+    <Content Include="Courses\سي شارب\10.mp4" />
+    <Content Include="Courses\سي شارب\11.mp4" />
+    <Content Include="Courses\سي شارب\12.mp4" />
+    <Content Include="Courses\سي شارب\13.mp4" />
+    <Content Include="Courses\سي شارب\14.mp4" />
+    <Content Include="Courses\سي شارب\16.mp4" />
+    <Content Include="Courses\سي شارب\17.mp4" />
+    <Content Include="Courses\سي شارب\18.mp4" />
+    <Content Include="Courses\سي شارب\19.mp4" />
+    <Content Include="Courses\سي شارب\2.mp4" />
+    <Content Include="Courses\سي شارب\20.mp4" />
+    <Content Include="Courses\سي شارب\21.mp4" />
+    <Content Include="Courses\سي شارب\22.mp4" />
+    <Content Include="Courses\سي شارب\23.mp4" />
+    <Content Include="Courses\سي شارب\24.mp4" />
+    <Content Include="Courses\سي شارب\25.mp4" />
+    <Content Include="Courses\سي شارب\26.mp4" />
+    <Content Include="Courses\سي شارب\27.mp4" />
+    <Content Include="Courses\سي شارب\28.mp4" />
+    <Content Include="Courses\سي شارب\29.mp4" />
+    <Content Include="Courses\سي شارب\3.mp4" />
+    <Content Include="Courses\سي شارب\30.mp4" />
+    <Content Include="Courses\سي شارب\31.mp4" />
+    <Content Include="Courses\سي شارب\32.mp4" />
+    <Content Include="Courses\سي شارب\33.mp4" />
+    <Content Include="Courses\سي شارب\34.mp4" />
+    <Content Include="Courses\سي شارب\35.mp4" />
+    <Content Include="Courses\سي شارب\36.mp4" />
+    <Content Include="Courses\سي شارب\37.mp4" />
+    <Content Include="Courses\سي شارب\4.mp4" />
+    <Content Include="Courses\سي شارب\5.mp4" />
+    <Content Include="Courses\سي شارب\7.mp4" />
+    <Content Include="Courses\سي شارب\8.mp4" />
+    <Content Include="Courses\سي شارب\9.mp4" />
+    <Content Include="Icon.ico" />
+    <None Include="Resources\Icon.ico" />
+    <None Include="Resources\save50pxa.png" />
+    <None Include="Resources\save56px.png" />
+    <None Include="Resources\save60px.png" />
+    <None Include="Resources\save50px2.png" />
+    <None Include="Resources\save50px.png" />
+    <None Include="Resources\add50px.png" />
+    <None Include="Resources\x40px.png" />
+    <None Include="Resources\exitt60px.png" />
+    <None Include="Resources\seraching60px.png" />
+    <None Include="Resources\serachfile60px.png" />
+    <None Include="Resources\IMG_20220817_164158.png" />
+    <None Include="Resources\whiteSearch60px.png" />
+    <None Include="Resources\search56px.png" />
+    <None Include="Resources\search42px.png" />
+    <None Include="Resources\adding.png" />
+    <None Include="Resources\add40px.png" />
+    <None Include="Resources\setting42px.png" />
+    <None Include="Resources\rename42px.png" />
+    <None Include="Resources\cancel42px.png" />
+    <None Include="Resources\remove42px.png" />
+    <None Include="Resources\playerved42px.png" />
+    <None Include="Resources\playerved60px.png" />
+    <None Include="Resources\playerved40px.png" />
+    <None Include="Resources\logout60px.png" />
+    <None Include="Resources\login.gif" />
+    <None Include="Resources\true60px.png" />
+    <None Include="Resources\true.png" />
+    <None Include="Resources\det40px.png" />
+    <None Include="Resources\settingsapple40px.png" />
+    <None Include="Resources\settings40px.png" />
+    <None Include="Resources\report40px.png" />
+    <None Include="Resources\llib40px.png" />
+    <None Include="Resources\libblue40px.png" />
+    <None Include="Resources\corse40px.png" />
+    <None Include="Resources\file60px.png" />
+    <None Include="Resources\infob.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\deleted.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\goback.png" />
+    <None Include="Resources\perv.png" />
+    <None Include="Resources\stop2.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\prev.png" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\pasud2.png" />
+    <None Include="Resources\pasud.png" />
+    <None Include="Resources\next.png" />
+    <None Include="Resources\control.png" />
+    <None Include="Resources\again.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
